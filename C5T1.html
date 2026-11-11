@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>非谓语动词 · 先导课当堂检测（12 题）</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231e3a5f'/%3E%3Ctext x='32' y='43' font-size='27' font-family='serif' font-weight='700' fill='%23ffffff' text-anchor='middle'%3E测%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1e3a5f; --ink2:#3a5675; --line:#d5dde7; --soft:#f4f7fa;
+  --ok:#1c6e54; --okbg:#eef7f2; --bad:#9f3730; --badbg:#fbf0ee;
+  --gray:#66727f; --gold:#b98a3c;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eceff3; color:#1b2530;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-size:16px; line-height:1.75;
+}
+.shell{max-width:760px; margin:0 auto; padding:20px 16px 44px}
+.card{background:#fff; border:1px solid var(--line); border-radius:4px}
+.hidden{display:none !important}
+/* ---------- 开始页 ---------- */
+.start{padding:44px 36px 38px; border-top:4px solid var(--ink)}
+.brand{font-size:12px; letter-spacing:.16em; color:var(--ink2); font-weight:600}
+h1{font-size:30px; line-height:1.35; margin:10px 0 12px; color:var(--ink); letter-spacing:.01em}
+.chips{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 18px}
+.chips span{font-size:12.5px; color:#41506a; background:var(--soft); border:1px solid var(--line); padding:4px 10px; border-radius:2px}
+.desc{font-size:14.5px; color:#465468; margin:0 0 26px; max-width:30em}
+.btn{
+  font-family:inherit; font-size:16px; font-weight:600; letter-spacing:.04em;
+  border:1px solid var(--ink); background:#fff; color:var(--ink);
+  padding:13px 26px; min-height:48px; border-radius:3px; cursor:pointer;
+  transition:background .16s ease, color .16s ease;
+}
+.btn:hover{background:var(--ink); color:#fff}
+.btn.primary{background:var(--ink); color:#fff}
+.btn.primary:hover{background:#16304f}
+.btn:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+.start .btn{width:100%; margin-top:4px}
+.hint{font-size:12.5px; color:var(--gray); margin-top:14px; text-align:center}
+/* ---------- 答题页 ---------- */
+.topbar{display:flex; align-items:center; gap:12px; margin:4px 0 12px}
+.prog{flex:1; height:5px; background:#dbe2ea; border-radius:3px; overflow:hidden}
+.prog .bar{height:100%; width:8.33%; background:var(--ink); transition:width .25s ease}
+.count{font-size:12.5px; color:var(--ink2); font-variant-numeric:tabular-nums; letter-spacing:.04em}
+.qcard{padding:26px 28px 24px}
+.qmeta{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px}
+.tag{font-size:11.5px; letter-spacing:.08em; color:var(--ink); background:var(--soft); border:1px solid var(--line); padding:3px 8px; border-radius:2px; font-weight:600}
+.qno{font-size:12px; color:var(--gray); letter-spacing:.06em}
+.stem{font-size:17px; line-height:1.8; color:#182230}
+.stem b{color:var(--ink); font-weight:700}
+.stem .blank{display:inline-block; width:88px; border-bottom:1px solid #46505f; margin:0 4px; height:1.1em; vertical-align:baseline}
+.options{display:flex; flex-direction:column; gap:10px; margin:20px 0 4px}
+.opt{
+  display:flex; align-items:flex-start; gap:12px; width:100%; text-align:left;
+  font-family:inherit; font-size:16px; line-height:1.65; color:#1b2530;
+  background:#fff; border:1px solid var(--line); border-radius:3px;
+  padding:13px 15px; min-height:52px; cursor:pointer;
+  transition:border-color .15s ease, background .15s ease;
+}
+.opt .ltr{
+  flex:none; width:26px; height:26px; border:1px solid #b9c4d2; border-radius:50%;
+  font-size:13px; line-height:24px; text-align:center; font-weight:700; color:var(--ink);
+  margin-top:1px;
+}
+.opt .txt{flex:1; min-width:0; font-family:Georgia,"Times New Roman",serif; font-size:16.5px}
+.opt .txt.zh{font-family:inherit; font-size:15.5px}
+.opt:hover:not(:disabled){border-color:var(--ink2); background:#fafbfd}
+.opt:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok); background:var(--okbg)}
+.opt.ok .ltr{border-color:var(--ok); color:var(--ok)}
+.opt.bad{border-color:var(--bad); background:var(--badbg)}
+.opt.bad .ltr{border-color:var(--bad); color:var(--bad)}
+.opt.dim{opacity:.55}
+.opt .mark{margin-left:auto; flex:none; font-size:13px; font-weight:700}
+.opt.ok .mark{color:var(--ok)}
+.opt.bad .mark{color:var(--bad)}
+/* ---------- 解析 ---------- */
+.exp{margin-top:18px; border:1px solid var(--line); border-left:4px solid var(--ink2); background:#fbfcfd; padding:14px 16px}
+.expHead{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px}
+.verdict{font-size:14px; font-weight:700; letter-spacing:.04em}
+.verdict.ok{color:var(--ok)}
+.verdict.bad{color:var(--bad)}
+.ansTag{font-size:12px; color:var(--ink); background:#e9eff6; padding:2px 8px; border-radius:2px}
+.expBody{font-size:14px; color:#33414f; line-height:1.8}
+.expBody .cn{display:block; margin-bottom:6px; color:#5a6674; font-size:13.5px}
+.expBody b{color:var(--ink)}
+.next{width:100%; margin-top:18px}
+/* ---------- 结果页 ---------- */
+.result{padding:38px 32px 32px; border-top:4px solid var(--ink)}
+.scoreWrap{display:flex; align-items:baseline; gap:6px; justify-content:center}
+.score{font-size:56px; font-weight:700; color:var(--ink); line-height:1.1; font-variant-numeric:tabular-nums}
+.total{font-size:20px; color:var(--gray)}
+.result h2{font-size:20px; text-align:center; margin:10px 0 6px; color:var(--ink)}
+.bandDesc{text-align:center; font-size:14px; color:#465468; margin:0 0 24px}
+.wrongTitle{font-size:13px; letter-spacing:.08em; color:var(--ink2); font-weight:600; border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:12px}
+.witem{padding:12px 0; border-bottom:1px solid #e6ebf1}
+.witem:last-child{border-bottom:0}
+.wstem{font-size:14.5px; color:#182230}
+.wstem b{color:var(--ink)}
+.wmeta{font-size:12.5px; margin:5px 0 4px}
+.wmeta .u{color:var(--bad); font-weight:600}
+.wmeta .c{color:var(--ok); font-weight:600}
+.wexp{font-size:13px; color:#4a5664; line-height:1.75}
+.wexp .cn{color:#68737f}
+.perfect{background:var(--okbg); border:1px solid #cbe4d9; padding:16px; font-size:14px; color:#1d5a47; margin-bottom:22px}
+.again{width:100%; margin-top:22px}
+.foot{text-align:center; font-size:11.5px; color:#8b95a3; letter-spacing:.06em; margin-top:22px}
+/* ---------- 移动端 ---------- */
+@media (max-width:600px){
+  body{font-size:16px}
+  .shell{padding:12px 10px 32px}
+  .start{padding:30px 20px 26px}
+  h1{font-size:24px}
+  .qcard{padding:20px 18px 18px}
+  .stem{font-size:16px}
+  .opt{padding:12px 13px}
+  .opt .txt{font-size:16px}
+  .result{padding:28px 18px 24px}
+  .score{font-size:46px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important; animation:none !important}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ============ 开始页 ============ -->
+  <section class="card start" id="start">
+    <div class="brand">CHAPTER 5 · 非谓语动词</div>
+    <h1>Introduction 先导课<br>当堂检测</h1>
+    <div class="chips"><span>共 12 题</span><span>每题 1 分</span><span>约 15 分钟</span></div>
+    <p class="desc">每题选完立刻判定，并给出答案与解析。做完看总分，错题可以逐条回看。</p>
+    <button class="btn primary" id="startBtn">开始答题</button>
+    <div class="hint">做完可点“再做一遍”，题目顺序不变，适合复习二刷</div>
+  </section>
+
+  <!-- ============ 答题页 ============ -->
+  <section id="quiz" class="hidden">
+    <div class="topbar">
+      <div class="prog"><div class="bar" id="bar"></div></div>
+      <div class="count"><span id="cur">1</span> / 12</div>
+    </div>
+    <div class="card qcard">
+      <div class="qmeta">
+        <span class="tag" id="qtag">判断谓语</span>
+        <span class="qno" id="qno">第 1 题</span>
+      </div>
+      <div class="stem" id="stem"></div>
+      <div class="options" id="options"></div>
+      <div class="exp hidden" id="exp">
+        <div class="expHead">
+          <span class="verdict" id="verdict"></span>
+          <span class="ansTag" id="ansTag"></span>
+        </div>
+        <div class="expBody" id="expBody"></div>
+      </div>
+      <button class="btn primary next hidden" id="nextBtn">下一题</button>
+    </div>
+  </section>
+
+  <!-- ============ 结果页 ============ -->
+  <section id="result" class="card result hidden">
+    <div class="scoreWrap"><div class="score" id="score">0</div><div class="total">/ 12</div></div>
+    <h2 id="band"></h2>
+    <p class="bandDesc" id="bandDesc"></p>
+    <div id="review"></div>
+    <button class="btn again" id="againBtn">再做一遍</button>
+  </section>
+
+  <div class="foot">教书匠查理 · 语法全解系列</div>
+</div>
+
+<script>
+const QS = [
+  {
+    tag:"判断谓语",
+    stem:'The little girl looked at the painting with great interest.<br>句中的谓语动词是：',
+    options:["looked","at","painting","interest"],
+    zh:false,
+    answer:0,
+    cn:"这个小女孩兴致勃勃地看着那幅画。",
+    exp:"全句只有 <b>looked</b> 一个谓语动词。painting 前有 the，此处是名词“画作”；interest 也是名词“兴趣”，都不是动词。"
+  },
+  {
+    tag:"并列谓语",
+    stem:'下列句子中，含有<b>两个谓语动词</b>的是：',
+    options:["She kept silent during the whole meeting.","The students are discussing the plan in the classroom.","He finished his work and went home.","My father asked me to clean the room."],
+    zh:false,
+    answer:2,
+    cn:"",
+    exp:"C 中 finished 与 went 由 <b>and</b> 连接，两个都是谓语。A 只有 kept；B 的 are discussing 是一个谓语（进行时）；D 的 asked 是谓语，to clean 是非谓语。"
+  },
+  {
+    tag:"从句谓语",
+    stem:'What surprised us most was his attitude towards the failure.<br>句中共有几个谓语动词？',
+    options:["1 个","2 个","3 个","4 个"],
+    zh:true,
+    answer:1,
+    cn:"最让我们吃惊的是他对失败的态度。",
+    exp:"<b>surprised</b> 是主语从句 What surprised us most 的谓语，<b>was</b> 是主句谓语，共 <b>2 个</b>。从句谓语不能算作主句的“第二个动词”。"
+  },
+  {
+    tag:"宾语补足语",
+    stem:'The teacher warned the boys <b>not to swim</b> in the river.<br>加粗部分作什么成分？',
+    options:["宾语","宾语补足语","定语","状语"],
+    zh:true,
+    answer:1,
+    cn:"老师警告那些男孩不要下河游泳。",
+    exp:"warn 的宾语是 the boys，not to swim 补充说明宾语“不要去做什么”，故为<b>宾补</b>。若只说 warned not to swim，缺了宾语，结构不成立。"
+  },
+  {
+    tag:"分词作状语",
+    stem:'<b>Frightened by the noise</b>, the baby began to cry.<br>加粗部分作什么成分？',
+    options:["定语","状语","表语","宾语补足语"],
+    zh:true,
+    answer:1,
+    cn:"被响声吓到，婴儿哭了起来。",
+    exp:"逻辑主语是 the baby，与主句主语一致；被吓到的是孩子，用过去分词表被动，作<b>原因状语</b>，相当于 Because the baby was frightened by the noise。"
+  },
+  {
+    tag:"分词作定语",
+    stem:'The window <b>broken in the storm</b> has been repaired.<br>加粗部分作什么成分？',
+    options:["定语","状语","宾语补足语","表语"],
+    zh:true,
+    answer:0,
+    cn:"在暴风雨中被打碎的那扇窗已经修好了。",
+    exp:"谓语是 has been repaired。broken in the storm 修饰 the window，单个分词带介词短语必须后置，故为<b>后置定语</b>。"
+  },
+  {
+    tag:"动名词作表语",
+    stem:'What he enjoys most is <b>collecting old coins</b>.<br>加粗部分作什么成分？',
+    options:["宾语","表语","定语","主语"],
+    zh:true,
+    answer:1,
+    cn:"他最喜欢的是收集旧硬币。",
+    exp:"主语是主语从句 What he enjoys most，is 是系动词，collecting old coins 说明主语的具体内容，作<b>表语</b>（动名词，名词性）。"
+  },
+  {
+    tag:"doing 两副面孔",
+    stem:'下列各句中，-ing 形式属于<b>动名词</b>的是：',
+    options:["The girl standing at the door is my sister.","He bought a new writing desk yesterday.","I heard someone singing next door.","The news is quite encouraging."],
+    zh:false,
+    answer:1,
+    cn:"",
+    exp:"writing desk 是“写字用的桌子”，表用途，属<b>动名词</b>。A standing 后置定语、C singing 宾补、D encouraging 表语，三处都是现在分词（形容词性）。"
+  },
+  {
+    tag:"同形不同身份",
+    stem:'His job is <b>designing</b> games for a small company. ／ The man <b>designing</b> games over there is my cousin.<br>两句中的 designing 分别作：',
+    options:["表语、定语","定语、表语","宾语、定语","表语、宾语补足语"],
+    zh:true,
+    answer:0,
+    cn:"他的工作是为一家小公司设计游戏。／在那边设计游戏的那个人是我表哥。",
+    exp:"第一句 is 是系动词，designing games 说明主语“工作是什么”，作<b>表语</b>（动名词）；第二句 designing games 修饰 the man，作<b>后置定语</b>（现在分词）。同形，靠位置定身份。"
+  },
+  {
+    tag:"完成式",
+    stem:'下列非谓语形式中，表示“动作发生在谓语之前”的是：',
+    options:["to clean","cleaning","having cleaned","being cleaned"],
+    zh:false,
+    answer:2,
+    cn:"",
+    exp:"<b>having done</b> 是完成式，动作先于谓语发生。to do 表将来或目的；doing 表同时或一般情况；being done 表被动进行。"
+  },
+  {
+    tag:"不定式的被动式",
+    stem:'The bridge <span class="blank"></span> next year will connect the two towns.<br>空白处应填：',
+    options:["built","building","to be built","having built"],
+    zh:false,
+    answer:2,
+    cn:"明年将要建的那座桥将连接这两个镇。",
+    exp:"next year 表将来，bridge 是被修建的对象，故用 <b>to be built</b> 作后置定语。谓语是 will connect，空处只能填非谓语。"
+  },
+  {
+    tag:"否定位置",
+    stem:'下列非谓语的否定形式，书写正确的是：',
+    options:["to not tell him","not to tell him","not tell him","to tell not him"],
+    zh:false,
+    answer:1,
+    cn:"",
+    exp:"非谓语的否定一律在结构最前面加 not：<b>not to do / not doing / not done</b>。A 把 not 插在 to 后，属分裂不定式；C 缺 to；D 语序错误。"
+  }
+];
+
+const LETTERS = ["A","B","C","D"];
+let idx = 0;
+let picks = new Array(QS.length).fill(-1);
+let locked = false;
+
+const $ = id => document.getElementById(id);
+const screens = { start: $("start"), quiz: $("quiz"), result: $("result") };
+
+function show(name){
+  Object.keys(screens).forEach(k => screens[k].classList.add("hidden"));
+  screens[name].classList.remove("hidden");
+}
+
+function render(){
+  const q = QS[idx];
+  locked = false;
+  $("cur").textContent = idx + 1;
+  $("bar").style.width = ((idx + 1) / QS.length * 100) + "%";
+  $("qtag").textContent = q.tag;
+  $("qno").textContent = "第 " + (idx + 1) + " 题";
+  $("stem").innerHTML = q.stem;
+  $("exp").classList.add("hidden");
+  $("nextBtn").classList.add("hidden");
+  $("nextBtn").textContent = idx === QS.length - 1 ? "查看结果" : "下一题";
+
+  const box = $("options");
+  box.innerHTML = "";
+  q.options.forEach((text, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "opt";
+    btn.dataset.i = i;
+    btn.setAttribute("aria-label", LETTERS[i] + ". " + text);
+    btn.innerHTML = '<span class="ltr">' + LETTERS[i] + '</span>' +
+                    '<span class="txt' + (q.zh ? " zh" : "") + '">' + text + '</span>' +
+                    '<span class="mark"></span>';
+    btn.addEventListener("click", () => choose(i));
+    box.appendChild(btn);
+  });
+}
+
+function choose(i){
+  if (locked) return;
+  locked = true;
+  const q = QS[idx];
+  const right = i === q.answer;
+  picks[idx] = i;
+
+  const opts = Array.from(document.querySelectorAll(".opt"));
+  opts.forEach((btn, k) => {
+    btn.disabled = true;
+    if (k === q.answer) {
+      btn.classList.add("ok");
+      btn.querySelector(".mark").textContent = "正确答案";
+    } else if (k === i) {
+      btn.classList.add("bad");
+      btn.querySelector(".mark").textContent = "你的选择";
+    } else {
+      btn.classList.add("dim");
+    }
+  });
+
+  $("verdict").textContent = right ? "回答正确" : "回答错误";
+  $("verdict").className = "verdict " + (right ? "ok" : "bad");
+  $("ansTag").textContent = "正确答案 " + LETTERS[q.answer];
+  $("expBody").innerHTML = (q.cn ? '<span class="cn">句意：' + q.cn + '</span>' : '') + q.exp;
+  $("exp").classList.remove("hidden");
+  $("nextBtn").classList.remove("hidden");
+  $("nextBtn").focus({ preventScroll: true });
+}
+
+function next(){
+  if (!locked) return;
+  if (idx < QS.length - 1) {
+    idx += 1;
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    finish();
+  }
+}
+
+function finish(){
+  const score = picks.reduce((s, p, i) => s + (p === QS[i].answer ? 1 : 0), 0);
+  $("score").textContent = score;
+  let title, desc;
+  if (score === 12) { title = "全对，这一关过了"; desc = "谓语辨别和成分判断都稳了，可以进入 Lesson 1 学形式细节。"; }
+  else if (score >= 10) { title = "基本过关"; desc = "错的一两题多半在成分上，把错题解析读一遍再二刷。"; }
+  else if (score >= 7) { title = "地图有了，手感还差一点"; desc = "重点回看“三种假谓语”和“doing 的两副面孔”，这两处最费判断。"; }
+  else { title = "先回看讲义再二刷"; desc = "错得多不是不会，是还没形成“先找谓语”的动作。把讲义四步法再走一遍。"; }
+  $("band").textContent = title;
+  $("bandDesc").textContent = desc;
+
+  const wrong = QS.map((q, i) => ({ q, i, pick: picks[i] })).filter(x => x.pick !== x.q.answer);
+  const review = $("review");
+  if (wrong.length === 0) {
+    review.innerHTML = '<div class="perfect">12 题全对，没有错题需要回顾。</div>';
+  } else {
+    review.innerHTML = '<div class="wrongTitle">错题回顾（' + wrong.length + ' 题）</div>' +
+      wrong.map(x =>
+        '<div class="witem">' +
+          '<div class="wstem">' + (x.i + 1) + '. ' + x.q.stem + '</div>' +
+          '<div class="wmeta">你的选择：<span class="u">' + LETTERS[x.pick] + '</span>　正确答案：<span class="c">' + LETTERS[x.q.answer] + '</span></div>' +
+          '<div class="wexp">' + (x.q.cn ? '<span class="cn">句意：' + x.q.cn + '</span><br>' : '') + x.q.exp + '</div>' +
+        '</div>'
+      ).join("");
+  }
+  show("result");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function restart(){
+  idx = 0;
+  picks = new Array(QS.length).fill(-1);
+  render();
+  show("quiz");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+$("startBtn").addEventListener("click", () => { render(); show("quiz"); });
+$("nextBtn").addEventListener("click", next);
+$("againBtn").addEventListener("click", restart);
+
+document.addEventListener("keydown", e => {
+  if (screens.quiz.classList.contains("hidden")) return;
+  const k = e.key.toLowerCase();
+  if (!locked && ["a","b","c","d"].includes(k)) {
+    const i = "abcd".indexOf(k);
+    if (i < QS[idx].options.length) choose(i);
+  } else if (locked && (k === "enter" || k === " ")) {
+    e.preventDefault();
+    next();
+  }
+});
+</script>
+</body>
+</html>
